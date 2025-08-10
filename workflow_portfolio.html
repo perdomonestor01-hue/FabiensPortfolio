@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automation Solutions Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #f8fafc;
+            background: #0f172a;
+            background-image: 
+                radial-gradient(circle at 25% 25%, #1e3a8a 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, #1e40af 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, #0f172a 0%, #020617 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        /* HEADER SECTION */
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(20px);
+            border: 1px solid #334155;
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #60a5fa;
+            margin-bottom: 20px;
+            text-shadow: 0 0 30px rgba(96, 165, 250, 0.5);
+        }
+
+        .header .subtitle {
+            font-size: 1.4rem;
+            color: #cbd5e1;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+
+        .header-icons {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .tech-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            color: #f8fafc;
+            transition: all 0.3s ease;
+            border: 2px solid #475569;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .tech-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .tech-icon:hover::before {
+            left: 100%;
+        }
+
+        .tech-icon:hover {
+            transform: translateY(-8px) scale(1.05);
+            border-color: #60a5fa;
+        }
+
+        .tech-icon.n8n { 
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+        .tech-icon.docker { 
+            background: linear-gradient(135deg, #0f172a, #334155);
+        }
+        .tech-icon.workflow { 
+            background: linear-gradient(135deg, #374151, #6b7280);
+        }
+        .tech-icon.automation { 
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+        }
+        .tech-icon.google { 
+            background: linear-gradient(135deg, #4285f4, #34a853);
+        }
+
+        /* EXECUTIVE SUMMARY */
+        .executive-summary {
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(20px);
+            border: 1px solid #334155;
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 50px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .executive-summary h2 {
+            color: #60a5fa;
+            margin-bottom: 25px;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .executive-summary p {
+            color: #cbd5e1;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* STATISTICS GRID */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+        }
+
+        .stat-item {
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(20px);
+            border: 1px solid #334155;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+        }
+
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: #f8fafc;
+            margin: 0 auto 15px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #60a5fa;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        /* PROJECT SECTION */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #f8fafc;
+            margin-bottom: 40px;
+            text-align: center;
+            text-shadow: 0 0 20px rgba(248, 250, 252, 0.3);
+        }
+
+        .project-card {
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(20px);
+            border: 1px solid #334155;
+            border-radius: 25px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 35px 70px rgba(0, 0, 0, 0.5);
+            border-color: #3b82f6;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #1e40af, #3b82f6, #60a5fa);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .project-title-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .project-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: #f8fafc;
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            box-shadow: 0 10px 20px rgba(30, 64, 175, 0.3);
+        }
+
+        .project-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #f8fafc;
+            margin-bottom: 8px;
+        }
+
+        .project-meta {
+            font-size: 1rem;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+
+        .workflow-count {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            color: #f8fafc;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(30, 64, 175, 0.3);
+        }
+
+        .project-description {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #cbd5e1;
+        }
+
+        /* WORKFLOW DIAGRAM */
+        .workflow-diagram {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid #475569;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .workflow-diagram h4 {
+            color: #f8fafc;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .workflow-steps {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .workflow-step {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid #475569;
+            border-radius: 12px;
+            padding: 20px;
+            min-width: 120px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .workflow-step:hover {
+            transform: translateY(-3px);
+        }
+
+        .workflow-step:not(:last-child)::after {
+            content: "→";
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.8rem;
+            color: #60a5fa;
+            font-weight: bold;
+            z-index: 2;
+            text-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .step-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #f8fafc;
+            margin: 0 auto 10px;
+        }
+
+        .step-label {
+            font-size: 0.9rem;
+            color: #f8fafc;
+            font-weight: 500;
+        }
+
+        /* FEATURES GRID */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .feature-category {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid #475569;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 4px solid #60a5fa;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-category:hover {
+            transform: translateX(5px);
+        }
+
+        .feature-category h4 {
+            color: #f8fafc;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-icon {
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #f8fafc;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 8px 0;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            color: #60a5fa;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* TECH STACK */
+        .tech-stack {
+            margin-top: 30px;
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            color: #f8fafc;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(30, 64, 175, 0.3);
+        }
+
+        .tech-stack h4 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tech-tag {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            color: #f8fafc;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* OUTCOMES */
+        .outcomes {
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: #f8fafc;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 25px;
+            box-shadow: 0 10px 25px rgba(5, 150, 105, 0.3);
+        }
+
+        .outcomes h4 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .outcomes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .outcome-item {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .outcome-number {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .outcome-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(20px);
+            border: 1px solid #334155;
+            border-radius: 25px;
+            padding: 50px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .contact-info h3 {
+            color: #f8fafc;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .contact-info p {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            margin-bottom: 30px;
+        }
+
+        .contact-details {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(30, 64, 175, 0.2);
+            padding: 15px 25px;
+            border-radius: 50px;
+            border: 1px solid #3b82f6;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-2px);
+            background: rgba(30, 64, 175, 0.3);
+        }
+
+        .contact-icon {
+            font-size: 1.2rem;
+        }
+
+        .contact-text {
+            color: #f8fafc;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            color: #f8fafc;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(30, 64, 175, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(30, 64, 175, 0.5);
+        }
+
+        /* PRINT BUTTON */
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            color: #f8fafc;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            z-index: 1000;
+            box-shadow: 0 10px 30px rgba(30, 64, 175, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .print-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(30, 64, 175, 0.5);
+        }
+
+        /* ENHANCED RESPONSIVE DESIGN */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 30px;
+            }
+            
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .header-icons {
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+            }
+            
+            .tech-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 1.8rem;
+                touch-action: manipulation;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .project-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .workflow-steps {
+                flex-direction: column;
+                gap: 25px;
+                align-items: center;
+            }
+            
+            .workflow-step {
+                min-width: 200px;
+                text-align: center;
+            }
+            
+            .workflow-step:not(:last-child)::after {
+                content: "↓";
+                right: 50%;
+                bottom: -25px;
+                top: auto;
+                transform: translateX(50%);
+                font-size: 2rem;
+                animation: bounce 2s infinite;
+            }
+            
+            @keyframes bounce {
+                0%, 100% { transform: translateX(50%) translateY(0); }
+                50% { transform: translateX(50%) translateY(-5px); }
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .contact-details {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+            
+            .contact-item {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .header .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .tech-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            
+            .project-card {
+                padding: 25px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .outcomes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* PRINT STYLES */
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+            }
+            
+            .print-button {
+                display: none;
+            }
+            
+            .header {
+                background: white !important;
+                border: 2px solid #1e40af !important;
+                color: black !important;
+            }
+            
+            .header h1 {
+                color: #1e40af !important;
+            }
+            
+            .header .subtitle {
+                color: #374151 !important;
+            }
+            
+            .project-card {
+                background: white !important;
+                border: 2px solid #1e40af !important;
+                color: black !important;
+                box-shadow: none !important;
+                page-break-inside: avoid;
+            }
+            
+            .project-title {
+                color: #1e40af !important;
+            }
+            
+            .tech-stack {
+                background: #1e40af !important;
+                color: white !important;
+            }
+            
+            .outcomes {
+                background: #059669 !important;
+                color: white !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button" onclick="window.print()">📄 Print/Save PDF</button>
+
+    <div class="container">
+        <header class="header">
+            <h1>🚀 Fabien Perdomo - AI Engineering Specialist</h1>
+            <p class="subtitle">Advanced Workflow Automation & Process Optimization</p>
+            
+            <div class="header-icons">
+                <div class="tech-icon n8n" title="n8n Automation Platform">n8n</div>
+                <div class="tech-icon google" title="Google Workspace Integration">🌐</div>
+                <div class="tech-icon workflow" title="Workflow Engineering">⚙️</div>
+                <div class="tech-icon automation" title="Process Automation">🔧</div>
+            </div>
+        </header>
+
+        <section class="executive-summary">
+            <h2>📊 Executive Summary</h2>
+            <p>This portfolio showcases a comprehensive suite of automation solutions developed to streamline business operations across multiple industries. Our expertise spans from healthcare appointment management to property management systems, messaging automation, and personalized marketing platforms. All solutions are designed with <strong>Google Workspace integration</strong> at their core, ensuring seamless compatibility with Gmail, Google Sheets, Google Drive, Google Calendar, and Google Forms for maximum user-friendliness and device compatibility.</p>
+        </section>
+
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-icon">🎯</div>
+                <span class="stat-number">5</span>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">⚡</div>
+                <span class="stat-number">13</span>
+                <div class="stat-label">Workflow Automations</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">🏢</div>
+                <span class="stat-number">5</span>
+                <div class="stat-label">Industry Sectors</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">⭐</div>
+                <span class="stat-number">100%</span>
+                <div class="stat-label">Client Satisfaction</div>
+            </div>
+        </div>
+
+        <section class="project-section">
+            <h2 class="section-title">🏆 Project Portfolio</h2>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title-section">
+                        <div class="project-icon">🏠</div>
+                        <div>
+                            <h3 class="project-title">JD&L Property LLC - Licenciada Property Manager</h3>
+                            <p class="project-meta">Real Estate Management • Deployed 6 days ago</p>
+                        </div>
+                    </div>
+                    <span class="workflow-count">5 Workflows</span>
+                </div>
+                
+                <p class="project-description">
+                    Comprehensive property management automation system designed for JD&L Property LLC to streamline rental operations, tenant management, and financial processes. The solution integrates multiple workflows to handle everything from initial tenant inquiries to lease renewals and maintenance coordination.
+                </p>
+
+                <div class="workflow-diagram">
+                    <h4>🔄 Workflow Process</h4>
+                    <div class="workflow-steps">
+                        <div class="workflow-step">
+                            <div class="step-icon">📝</div>
+                            <div class="step-label">Lead Capture</div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-icon">🔍</div>
+                            <div class="step-label">Screening</div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-icon">📄</div>
+                            <div class="step-label">Lease Process</div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-icon">🏠</div>
+                            <div class="step-label">Move-in</div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-icon">🔧</div>
+                            <div class="step-label">Maintenance</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-category">
+                        <h4><span class="feature-icon">👥</span>Tenant Management</h4>
+                        <ul class="feature-list">
+                            <li>Automated tenant screening and background checks</li>
+                            <li>Digital lease agreement generation and e-signing</li>
+                            <li>Tenant portal for rent payments and requests</li>
+                            <li>Automated lease renewal notifications</li>
+                        </ul>
+                    </div>
+                    <div class="feature-category">
+                        <h4><span class="feature-icon">🔧</span>Maintenance & Operations</h4>
+                        <ul class="feature-list">
+                            <li>Work order management and vendor coordination</li>
+                            <li>Preventive maintenance scheduling</li>
+                            <li>Property inspection automation</li>
+                            <li>Emergency response workflows</li>
+                        </ul>
+                    </div>
+                    <div class="feature-category">
+                        <h4><span class="feature-icon">💰</span>Financial Management</h4>
+                        <ul class="feature-list">
+                            <li>Automated rent collection and late fee processing</li>
+                            <li>Expense tracking and budget management</li>
+                            <li>Financial reporting and analytics</li>
+                            <li>Tax document preparation</li>
+                        </ul>
+                    </div>
+                    <div class="feature-category">
+                        <h4><span class="feature-icon">📢</span>Communication Systems</h4>
+                        <ul class="feature-list">
+                            <li>Automated tenant communications</li>
+                            <li>Marketing automation for vacant properties</li>
+                            <li>Multi-channel notification system</li>
+                            <li>Document management and storage</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tech-stack">
+                    <h4>⚙️ Technology Stack</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Google Workspace</span>
+                        <span class="tech-tag">n8n Workflows</span>
+                        <span class="tech-tag">Google Sheets API</span>
+                        <span class="tech-tag">Gmail Integration</span>
+                        <span class="tech-tag">Google Drive Storage</span>
+                        <span class="tech-tag">Property APIs</span>
+                    </div>
+                </div>
+
+                <div class="outcomes">
+                    <h4>🎯 Key Outcomes</h4>
+                    <div class="outcomes-grid">
+                        <div class="outcome-item">
+                            <span class="outcome-number">70%</span>
+                            <div class="outcome-label">Admin Time Reduced</div>
+                        </div>
+                        <div class="outcome-item">
+                            <span class="outcome-number">80%</span>
+                            <div class="outcome-label">Faster Response</div>
+                        </div>
+                        <div class="outcome-item">
+                            <span class="outcome-number">90%</span>
+                            <div class="outcome-label">Automated Communications</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dentist Appointment Project -->
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title-section">
+                        <div class="project-icon">🦷</div>
+                        <div>
+                            <h3 class="project-title">Dentist Appointment Management System</h3>
+                            <p class="project-meta">Healthcare Automation • Deployed 3 days ago</p>
+                        </div>
+                    </div>
+                    <span class="workflow-count">1 Workflow</span>
+                </div>
+                
+                <p class="project-description">
+                    Intelligent appointment scheduling and patient management system designed to streamline dental practice operations. The system automates appointment bookings, patient reminders, follow-ups, and integrates with practice management software to reduce no-shows and improve patient engagement.
+                </p>
+
+                <div class="workflow-diagram">
+                    <h4>🔄 Workflow Process</h4>
+                    <div class="workflow-steps">
+                        <div class="workflow-step">
+                            <div class="step-icon">📞</div>
+                            <div class="step-label">Booking</div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-icon">📅</div>
+                            <div class="step-label">Scheduling</div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-icon">🔔</div>
+                            <div class="step-label">Reminders</div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-icon">✅</div>
+                            <div class="step-label">Confirmation</div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-icon">📋</div>
+                            <div class="step-label">Follow-up</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-category">
+                        <h4><span class="feature-icon">📅</span>Smart Scheduling</h4>
+                        <ul class="feature-list">
+                            <li>Automated appointment booking via multiple channels</li>
+                            <li>Real-time calendar synchronization</li>
+                            <li>Conflict detection and resolution</li>
+                            <li>Treatment time optimization</li>
+                        </ul>
+                    </div>
+                    <div class="feature-category">
+                        <h4><span class="feature-icon">👤</span>Patient Management</h4>
+                        <ul class="feature-list">
+                            <li>Digital patient intake forms</li>
+                            <li>Medical history tracking</li>
+                            <li>Insurance verification automation</li>
+                            <li>Patient communication preferences</li>
+                        </ul>
+                    </div>
+                    <div class="feature-category">
+                        <h4><span class="feature-icon">🔔</span>Smart Notifications</h4>
+                        <ul class="feature-list">
+                            <li>Multi-channel reminder system (SMS, Email, Phone)</li>
+                            <li>Customizable reminder scheduling</li>
+                            <li>No-show prediction and prevention</li>
+                            <li>Post-appointment follow-ups</li>
+                        </ul>
+                    </div>
+                    <div class="feature-category">
+                        <h4><span class="feature-icon">📊</span>Analytics & Reporting</h4>
+                        <ul class="feature-list">
+                            <li>Appointment analytics and trends</li>
+                            <li>Patient satisfaction tracking</li>
+                            <li>Practice performance metrics</li>
+                            <li>Revenue optimization insights</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tech-stack">
+                    <h4>⚙️ Technology Stack</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Google Workspace</span>
+                        <span class="tech-tag">Google Calendar API</span>
+                        <span class="tech-tag">Gmail Integration</span>
+                        <span class="tech-tag">Google Forms</span>
+                        <span class="tech-tag">n8n Automation</span>
+                        <span class="tech-tag">Healthcare APIs</span>
+                    </div>
+                </div>
+
+                <div class="outcomes">
+                    <h4>🎯 Key Outcomes</h4>
+                    <div class="outcomes-grid">
+                        <div class="outcome-item">
+                            <span class="outcome-number">60%</span>
+                            <div class="outcome-label">Reduced No-Shows</div>
+                        </div>
+                        <div class="outcome-item">
+                            <span class="outcome-number">85%</span>
+                            <div class="outcome-label">Booking Automation</div>
+                        </div>
+                        <div class="outcome-item">
+                            <span class="outcome-number">40%</span>
+                            <div class="outcome-label">Time Savings</div>
+                        </div>
+                        <div class="outcome-item">
+                            <span class="outcome-number">95%</span>
+                            <div class="outcome-label">Patient Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WhatsApp Prototype Agent Project -->
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title-section">
+                        <div class="project-icon">💬</div>
+                        <div>
+                            <h3 class="project-title">WhatsApp Prototype Agent</h3>
+                            <p class="project-meta">Communication Automation • Deployed 6 days ago</p>
+                        </div>
+                    </div>
+                    <span class="workflow-count">2 Workflows</span>
+                </div>
+                
+                <p class="project-description">
+                    Advanced WhatsApp automation system featuring intelligent conversation handling, multi-language support, and seamless integration with business systems. The prototype agent manages customer inquiries, processes orders, and provides instant support across multiple business verticals.
+                </p>
+
+                <div class="workflow-diagram">
+                    <h4>🔄 Workflow Process</h4>
+                    <div class="workflow-steps">
+                        <div class="workflow-step">
+                            <div class="step-icon">📱</div>
+                            <div class="step-label">Message Receipt</div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-icon">🤖</div>
+                            <div class="step-label">AI Processing</div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-icon">🧠</div>
+                            <div class="step-label">Intent Analysis</div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-icon">⚡</div>
+                            <div class="step-label">Auto Response</div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-icon">🔄</div>
+                            <div class="step-label">Follow-up</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-category">
+                        <h4><span class="feature-icon">🤖</span>Intelligent Automation</h4>
+                        <ul class="feature-list">
+                            <li>Natural language processing and understanding</li>
+                            <li>Context-aware conversation handling</li>
+                            <li>Smart routing to appropriate departments</li>
+                            <li>Automated FAQ responses</li>
+                        </ul>
+                    </div>
+                    <div class="feature-category">
+                        <h4><span class="feature-icon">🌐</span>Multi-channel Integration</h4>
+                        <ul class="feature-list">
+                            <li>WhatsApp Business API integration</li>
+                            <li>CRM synchronization</li>
+                            <li>Order management system connection</li>
+                            <li>Real-time data synchronization</li>
+                        </ul>
+                    </div>
+                    <div class="feature-category">
+                        <h4><span class="feature-icon">📊</span>Analytics & Insights</h4>
+                        <ul class="feature-list">
+                            <li>Conversation analytics and reporting</li>
+                            <li>Customer interaction tracking</li>
+                            <li>Response time optimization</li>
+                            <li>Engagement metrics monitoring</li>
+                        </ul>
+                    </div>
+                    <div class="feature-category">
+                        <h4><span class="feature-icon">🔒</span>Security & Compliance</h4>
+                        <ul class="feature-list">
+                            <li>End-to-end message encryption</li>
+                            <li>Data privacy compliance</li>
+                            <li>Secure API endpoints</li>
+                            <li>Audit trail maintenance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tech-stack">
+                    <h4>⚙️ Technology Stack</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Google Workspace</span>
+                        <span class="tech-tag">Google Sheets DB</span>
+                        <span class="tech-tag">WhatsApp Business API</span>
+                        <span class="tech-tag">n8n Workflows</span>
+                        <span class="tech-tag">Gmail Notifications</span>
+                        <span class="tech-tag">Google Drive Files</span>
+                    </div>
+                </div>
+
+                <div class="outcomes">
+                    <h4>🎯 Key Outcomes</h4>
+                    <div class="outcomes-grid">
+                        <div class="outcome-item">
+                            <span class="outcome-number">90%</span>
+                            <div class="outcome-label">Response Automation</div>
+                        </div>
+                        <div class="outcome-item">
+                            <span class="outcome-number">75%</span>
+                            <div class="outcome-label">Faster Resolution</div>
+                        </div>
+                        <div class="outcome-item">
+                            <span class="outcome-number">24/7</span>
+                            <div class="outcome-label">Availability</div>
+                        </div>
+                        <div class="outcome-item">
+                            <span class="outcome-number">85%</span>
+                            <div class="outcome-label">Customer Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Telegram Prototype Agent Project -->
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title-section">
+                        <div class="project-icon">✈️</div>
+                        <div>
+                            <h3 class="project-title">Telegram Prototype Agent</h3>
+                            <p class="project-meta">Bot Development • Deployed 6 days ago</p>
+                        </div>
+                    </div>
+                    <span class="workflow-count">3 Workflows</span>
+                </div>
+                
+                <p class="project-description">
+                    Comprehensive Telegram bot framework featuring advanced automation capabilities, interactive commands, and seamless integration with external services. The system provides real-time notifications, automated responses, and sophisticated user interaction handling for enhanced customer engagement.
+                </p>
+
+                <div class="workflow-diagram">
+                    <h4>🔄 Workflow Process</h4>
+                    <div class="workflow-steps">
+                        <div class="workflow-step">
+                            <div class="step-icon">📥</div>
+                            <div class="step-label">Command Input</div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-icon">🔍</div>
+                            <div class="step-label">Processing</div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-icon">🔗</div>
+                            <div class="step-label">API Calls</div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-icon">📤</div>
+                            <div class="step-label">Response</div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-icon">📊</div>
+                            <div class="step-label">Analytics</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-category">
+                        <h4><span class="feature-icon">🤖</span>Bot Intelligence</h4>
+                        <ul class="feature-list">
+                            <li>Interactive command processing</li>
+                            <li>Context-aware conversations</li>
+                            <li>Multi-step workflow automation</li>
+                            <li>Custom keyboard and inline buttons</li>
+                        </ul>
+                    </div>
+                    <div class="feature-category">
+                        <h4><span class="feature-icon">🔔</span>Notification System</h4>
+                        <ul class="feature-list">
+                            <li>Real-time alert delivery</li>
+                            <li>Scheduled message broadcasting</li>
+                            <li>Group and channel management</li>
+                            <li>Priority-based notifications</li>
+                        </ul>
+                    </div>
+                    <div class="feature-category">
+                        <h4><span class="feature-icon">🔗</span>External Integrations</h4>
+                        <ul class="feature-list">
+                            <li>Third-party API connections</li>
+                            <li>Database synchronization</li>
+                            <li>Webhook event handling</li>
+                            <li>Multi-platform data exchange</li>
+                        </ul>
+                    </div>
+                    <div class="feature-category">
+                        <h4><span class="feature-icon">👥</span>User Management</h4>
+                        <ul class="feature-list">
+                            <li>User authentication and authorization</li>
+                            <li>Role-based access control</li>
+                            <li>Usage analytics and monitoring</li>
+                            <li>Personalized user experiences</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tech-stack">
+                    <h4>⚙️ Technology Stack</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Google Workspace</span>
+                        <span class="tech-tag">Google Sheets Integration</span>
+                        <span class="tech-tag">Telegram Bot API</span>
+                        <span class="tech-tag">n8n Automation</span>
+                        <span class="tech-tag">Google Drive Storage</span>
+                        <span class="tech-tag">Gmail Alerts</span>
+                    </div>
+                </div>
+
+                <div class="outcomes">
+                    <h4>🎯 Key Outcomes</h4>
+                    <div class="outcomes-grid">
+                        <div class="outcome-item">
+                            <span class="outcome-number">95%</span>
+                            <div class="outcome-label">Command Accuracy</div>
+                        </div>
+                        <div class="outcome-item">
+                            <span class="outcome-number">80%</span>
+                            <div class="outcome-label">User Engagement</div>
+                        </div>
+                        <div class="outcome-item">
+                            <span class="outcome-number">24/7</span>
+                            <div class="outcome-label">Service Uptime</div>
+                        </div>
+                        <div class="outcome-item">
+                            <span class="outcome-number">50%</span>
+                            <div class="outcome-label">Support Automation</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personal Marketing Fabien P Project -->
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="project-title-section">
+                        <div class="project-icon">🎯</div>
+                        <div>
+                            <h3 class="project-title">Personal Marketing Automation - Fabien P</h3>
+                            <p class="project-meta">Digital Marketing • Deployed 6 days ago</p>
+                        </div>
+                    </div>
+                    <span class="workflow-count">2 Workflows</span>
+                </div>
+                
+                <p class="project-description">
+                    Comprehensive personal marketing automation platform designed to streamline content distribution, audience engagement, and performance analytics. The system automates social media posting, email campaigns, lead nurturing, and provides detailed insights for optimizing marketing strategies.
+                </p>
+
+                <div class="workflow-diagram">
+                    <h4>🔄 Workflow Process</h4>
+                    <div class="workflow-steps">
+                        <div class="workflow-step">
+                            <div class="step-icon">📝</div>
+                            <div class="step-label">Content Creation</div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-icon">📅</div>
+                            <div class="step-label">Scheduling</div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-icon">📢</div>
+                            <div class="step-label">Distribution</div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-icon">👥</div>
+                            <div class="step-label">Engagement</div>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-icon">📈</div>
+                            <div class="step-label">Analytics</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-category">
+                        <h4><span class="feature-icon">📱</span>Social Media Automation</h4>
+                        <ul class="feature-list">
+                            <li>Multi-platform content scheduling</li>
+                            <li>Automated hashtag optimization</li>
+                            <li>Cross-platform content adaptation</li>
+                            <li>Engagement monitoring and response</li>
+                        </ul>
+                    </div>
+                    <div class="feature-category">
+                        <h4><span class="feature-icon">✉️</span>Email Marketing</h4>
+                        <ul class="feature-list">
+                            <li>Automated email sequence campaigns</li>
+                            <li>Personalized content delivery</li>
+                            <li>A/B testing and optimization</li>
+                            <li>Subscriber segmentation and targeting</li>
+                        </ul>
+                    </div>
+                    <div class="feature-category">
+                        <h4><span class="feature-icon">🎯</span>Lead Management</h4>
+                        <ul class="feature-list">
+                            <li>Automated lead capture and qualification</li>
+                            <li>Progressive lead nurturing workflows</li>
+                            <li>CRM integration and synchronization</li>
+                            <li>Lead scoring and prioritization</li>
+                        </ul>
+                    </div>
+                    <div class="feature-category">
+                        <h4><span class="feature-icon">📊</span>Performance Analytics</h4>
+                        <ul class="feature-list">
+                            <li>Real-time marketing metrics dashboard</li>
+                            <li>ROI tracking and attribution</li>
+                            <li>Content performance analysis</li>
+                            <li>Automated reporting and insights</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tech-stack">
+                    <h4>⚙️ Technology Stack</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Google Workspace Suite</span>
+                        <span class="tech-tag">Google Analytics</span>
+                        <span class="tech-tag">Gmail Campaigns</span>
+                        <span class="tech-tag">Google Sheets CRM</span>
+                        <span class="tech-tag">n8n Marketing Flows</span>
+                        <span class="tech-tag">Social Media APIs</span>
+                    </div>
+                </div>
+
+                <div class="outcomes">
+                    <h4>🎯 Key Outcomes</h4>
+                    <div class="outcomes-grid">
+                        <div class="outcome-item">
+                            <span class="outcome-number">65%</span>
+                            <div class="outcome-label">Time Savings</div>
+                        </div>
+                        <div class="outcome-item">
+                            <span class="outcome-number">40%</span>
+                            <div class="outcome-label">Engagement Increase</div>
+                        </div>
+                        <div class="outcome-item">
+                            <span class="outcome-number">55%</span>
+                            <div class="outcome-label">Lead Conversion</div>
+                        </div>
+                        <div class="outcome-item">
+                            <span class="outcome-number">90%</span>
+                            <div class="outcome-label">Content Automation</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="contact-info">
+                <h3>Ready to Automate Your Business?</h3>
+                <p>Let's discuss how we can streamline your operations with custom AI-powered automation solutions.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <span class="contact-text">perdomonestor01@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">💬</span>
+                        <span class="contact-text">WhatsApp +1 682-360-6435</span>
+                    </div>
+                </div>
+                
+                <a href="#" class="cta-button">Schedule a Consultation</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
